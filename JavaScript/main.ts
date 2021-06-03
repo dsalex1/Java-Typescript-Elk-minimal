@@ -3,7 +3,7 @@
  npm install -g typescript
  then compile in watch mode using: 
  tsc -w main.ts --downlevelIteration
- or 
+ or using npx
  npx tsc -w main.ts --downlevelIteration
 */
 
@@ -14,7 +14,6 @@ import type { ElkGraphUtil, ElkEdge, ElkNode } from "./types"
 
 //proper type checking ElkNode -> ElkNode
 function layout(graph: ElkNode): ElkNode {
-    //@ts-ignore some proper console that is
 
     const nodes = [...graph.getChildren()].map((n) => n.getIdentifier());
     const edges = [...graph.getContainedEdges()].map(e => ({
